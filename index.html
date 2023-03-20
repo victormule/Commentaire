@@ -1,52 +1,15 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>CommentBox and p5.js Example</title>
-    <!-- Intégration de CommentBox.io -->
-    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-    <script src="https://unpkg.com/p5"></script>
-    <style>
-      #commentbox {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    </style>
-  </head>
-  <body>
-    <div id="canvas-container"></div>
-    <!-- Ajout de la boîte de commentaires CommentBox.io -->
-    <div id="commentbox"></div>
-    <script>
-      // Création d'un canvas rouge
-      function setup() {
-        createCanvas(400, 200);
-        background(255, 0, 0);
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CommentBox.io Test</title>
+  <script src="https://unpkg.com/@commentbox.io/sdk"></script>
+</head>
+<body>
+  <div id="commentbox"></div>
 
-      // Vérification de la position de la souris pour afficher la boîte de commentaires
-      function draw() {
-        if (mouseX <= 400 && mouseY <= 200) {
-          document.getElementById("commentbox").style.display = "block";
-        } else {
-          document.getElementById("commentbox").style.display = "none";
-        }
-      }
-
-      // Appel à CommentBox.io pour afficher les commentaires
-      function loadCommentBox() {
-        commentBox("5757921497448448-proj", {
-          createBoxUrl(boxId, pageLocation) {
-            pageLocation.search = pageLocation.search ? "&" : "?";
-            return pageLocation.href + `${pageLocation.search}commentbox=${boxId}`;
-          },
-        });
-      }
-
-      // Initialisation de CommentBox.io
-      loadCommentBox();
-    </script>
-  </body>
+  <script>
+    commentbox('5757921497448448-proj');
+  </script>
+</body>
 </html>
