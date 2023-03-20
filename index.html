@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>CommentBox.io with P5.js</title>
-    <style>
-      #commentbox {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: none;
-        max-width: 600px;
-      }
-    </style>
-  </head>
-  <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-    <script src="https://cdn.commentbox.io/js.commentbox.io.js"></script>
-    <div id="commentbox"></div>
-    <script src="sketch.js"></script>
-    <script>
-      commentBox('YOUR_PROJECT_ID');
-      var canvasContainer = document.getElementById('defaultCanvas0').parentElement;
-      var commentBoxContainer = document.getElementById('commentbox');
-      canvasContainer.addEventListener('mousemove', function(e) {
-        if (e.clientX <= 400 && e.clientY <= 200) {
-          commentBoxContainer.style.display = 'block';
-        } else {
-          commentBoxContainer.style.display = 'none';
-        }
-      });
-    </script>
-  </body>
+<head>
+	<title>Ma page avec CommentBox.io</title>
+	<!-- Inclure le script CommentBox.io -->
+	<script src="https://unpkg.com/commentbox.io/dist/commentbox.min.js"></script>
+	<!-- Inclure le script P5.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+	<!-- Inclure votre fichier sketch.js -->
+	<script src="sketch.js"></script>
+	<!-- CSS pour la boîte de commentaires CommentBox.io -->
+	<style>
+		.commentbox {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 1rem;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			background-color: #fff;
+			font-family: sans-serif;
+			font-size: 1.2rem;
+			line-height: 1.5;
+			color: #333;
+			box-sizing: border-box;
+			position: fixed;
+			top: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- Le canvas P5.js -->
+	<div id="canvas-container"></div>
+	<!-- La boîte de commentaires CommentBox.io -->
+	<div id="commentbox"></div>
+</body>
 </html>
