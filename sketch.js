@@ -11,7 +11,7 @@ function setup() {
 		mouseYPos = event.clientY;
 	});
 	// Initialiser CommentBox.io
-	commentBox('5633336189911040-proj', {
+	commentBox('5633336189911040', {
 		createBoxUrl(boxId) {
 			// Renvoyer l'URL de la page actuelle avec l'ID de la boîte ajouté à la fin
 			return window.location.href + '#' + boxId;
